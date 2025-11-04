@@ -1,0 +1,14 @@
+1. User management: Simple login (username, password)
+
+2. User menu: A simple text based menu where user can choose what to do such as,book trip, view packages, exit.
+
+3. View travel packages: Here you can see the list of available tour packages with cost.
+
+4. Book package: user must input their details for booking such as, contact, name, package id etc. During booking simple payment feature is included.
+
+5. View booking details: allow user to search by    name or id.
+
+6. Cancel booking: Allow the user to cancel an existing booking using their booking id.
+
+7. Exit option with thankful message.
+
