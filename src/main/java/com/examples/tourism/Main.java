@@ -1,3 +1,4 @@
+package main.java.com.examples.tourism;
 import java.util.Scanner;
 public class Main{
     public static void main(String args[]){
@@ -12,24 +13,25 @@ public class Main{
         int choice = input.nextInt();
         switch (choice) {
             case 1:
-                System.out.println("View packages");
+                viewPackages();
                 break;
             case 2:
                 System.out.println("Book a Packages");
                 break;
             case 3:
-                System.out.println("View a Packages");
+                System.out.println("View all booking");
                 break;
             case 4:
                 System.out.println("Cancel Booking");
                 break;
             case 5:
-                System.out.println("Exit");
+                System.out.println("Exiting from the system");
                 break;
             default:
                 System.out.println("Invalid Input");
                 break;
         }
+
     }
 
 
