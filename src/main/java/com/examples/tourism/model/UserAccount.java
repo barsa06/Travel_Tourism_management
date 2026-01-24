@@ -7,6 +7,10 @@ public class UserAccount {
         this.username = username;
         this.password = password;
     }
-    public String getName(){ return username;}
-    public String getPassword(){return password;}
+    public String getName(){
+        return username;
+    }
+    public String getPassword(){
+        return password;
+    }
 }
