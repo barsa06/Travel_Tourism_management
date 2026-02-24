@@ -3,7 +3,7 @@ import java.util.Scanner;
 import service.TravelService;
 
 
-public class MainMenu {
+public class MenuController {
         public void start(){
             TravelService service = new TravelService();
             
@@ -22,22 +22,12 @@ public class MainMenu {
         
         switch (choice) {
             case 1:
-                service.showPackages();
+                System.out.println("view packages");
                 break;
             case 2:
                 System.out.println("Enter the details below to book the packages.");
                 input.nextLine();
-
-                System.out.print("Name:");
-                String name = input.nextLine();
-
-                System.out.print("Contact:");
-                String contacts = input.nextLine();
-
-                System.out.print("Package id: ");
-                int id = input.nextInt();
-                
-                service.bookPackage(name, contacts, id);
+                service.startBooking();
                 break;
                 
             case 3:

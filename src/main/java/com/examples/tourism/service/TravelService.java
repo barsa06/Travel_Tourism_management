@@ -1,39 +1,53 @@
 package service;
 
 import java.util.ArrayList;
-import model.Package;
+import java.util.List;
+import java.util.Scanner;
 import model.Booking;
 
-public class TravelService{
-    private ArrayList<Package> packages = new ArrayList<>();
-    private ArrayList<Booking> bookings = new ArrayList<>();
+public class TravelService {
+    private List<Booking> bookings = new ArrayList<>();
+    
+    public void startBooking() {
 
-    public TravelService() {
-    packages.add(new Package(1, "Pokhara", 5, 15000));
-    packages.add(new Package(2, "Kathmandu", 3, 10000));
-    packages.add(new Package(3, "Chitwan", 4, 12000));
-}
-public void showPackages() {
-    for (int i = 0; i < packages.size(); i++) {
-        Package p = packages.get(i);
-        System.out.println(
-            p.getPackageId() + ". " +
-            p.getDestination() + " | " +
-            p.getDays() + " days | Rs. " +
-            p.getPrice()
-        );
-    }
-}
-public void bookPackage(String customerName, String contact, int packageId ){
-    for (int i = 0; i < packages.size(); i++) {
-        Package p = packages.get(i);
-        if(p.getPackageId()== packageId){
-            System.out.println("Booking successful!");
-            return;
+        Scanner input = new Scanner(System.in);
+        boolean choice = true;
+
+        while (choice) {
+
+            System.out.println("Enter the customer name:");
+            String customerName = input.nextLine();
+
+            System.out.println("Enter the contact:");
+            String contact = input.nextLine();
+
+            System.out.println("Enter the package ID:");
+            int packageId = input.nextInt();
+            input.nextLine();
+
+            bookings.add(new Booking(customerName, contact, packageId));
+
+            System.out.println("Do you want to continue adding? (y/n)");
+            char c = input.next().charAt(0);
+            input.nextLine();
+
+            if (c == 'n' || c == 'N') {
+                choice = false;
+            }
         }
-}
-System.out.println("Invalid choice.");
-System.out.println("The package id doesn't match.");
-}
 
+        System.out.println("Bookings List::");
+
+        for (Booking booking : bookings) {
+            System.out.println(booking);
+        }
+
+        if (!bookings.isEmpty()) {
+            Booking firstBooking = bookings.get(0);
+            System.out.println("\nFirst booking's customer name: "
+                    + firstBooking.getCustomerName());
+        }
+
+        input.close();
+    }
 }

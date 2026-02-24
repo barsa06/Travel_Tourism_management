@@ -1,9 +1,9 @@
-import controller.MainMenu;
+import controller.MenuController;
 public class Main{
     public static void main(String args[]){
         System.out.println("Welcome to the systemlogin");
         
-        MainMenu menu = new MainMenu();
+        MenuController menu = new MenuController();
         menu.start();
         
     }
