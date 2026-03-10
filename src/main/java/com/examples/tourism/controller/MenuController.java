@@ -8,30 +8,31 @@ public class MenuController {
             TravelService service = new TravelService();
             
         while(true){
-        System.out.println("Welcome to Travel and Tourism Management System!");
-        System.out.println("1. View packages");
-        System.out.println("2. Book a Packages");
+        System.out.println("==============================================");
+        System.out.println("      Travel and Tourism Management System    ");
+        System.out.println("==============================================");
+        System.out.println("1. View available Packages");
+        System.out.println("2. Book a Package");
         System.out.println("3. View Bookings");
-        System.out.println("4. Cancel Booking");
+        System.out.println("4. Cancel a Booking");
         System.out.println("5. Exit");
-        System.out.println("Enter your choice:");
+        System.out.println("----------------------------------------------");
+        System.out.println("\nPlease select an option by entering the corresponding number.");
+        System.out.print("Choice: ");
         Scanner input = new Scanner(System.in);
         int choice = input.nextInt();
-        
-        
-        
+        input.nextLine(); 
+
         switch (choice) {
             case 1:
-                System.out.println("view packages");
+                service.viewPackages();
                 break;
             case 2:
                 System.out.println("Enter the details below to book the packages.");
-                input.nextLine();
                 service.startBooking();
                 break;
-                
             case 3:
-                System.out.println("view bookings");
+                service.viewBookings();
                 break;
             case 4:
                 System.out.println("Cancel Booking");
@@ -45,10 +46,8 @@ public class MenuController {
                 break;
         }
 
-        }
-
-
-        }
+    }
+  }
         
 }
 

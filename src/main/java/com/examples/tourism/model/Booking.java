@@ -1,17 +1,24 @@
 package model;
 public class Booking {
+    private int customerId;
     private String customerName;
     private String contact;
     private int packageId;
 
-    public Booking(String customerName, String contact, int packageId) {
+    public Booking(int customerId, String customerName, String contact, int packageId) {
         this.customerName = customerName;
         this.contact = contact;
         this.packageId = packageId;
+        this.customerId = customerId;
     }
+    public int getCustomerId() { return customerId; }
     public String getCustomerName() { return customerName; }
     public int getPackageId() { return packageId; }
     public String getContact() { return contact; }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
@@ -28,7 +35,7 @@ public class Booking {
     // toString method for easy printing
     @Override
     public String toString() {
-        return "Booking{customerName='" + customerName + "', contact='" + contact + "', packageId=" + packageId + '}';
+        return "Booking{customerId=" + customerId + ", customerName='" + customerName + "', contact='" + contact + "', packageId=" + packageId + '}';
     }
 
 }
