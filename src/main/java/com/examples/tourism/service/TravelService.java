@@ -38,10 +38,7 @@ public class TravelService {
         boolean choice = true;
 
         while (choice) {
-            System.out.print("Enter the customer id:");
-            int customerId = input.nextInt();
-            input.nextLine();
-
+        
             System.out.print("Enter the customer name:");
             String customerName = input.nextLine();
 
@@ -70,7 +67,7 @@ public class TravelService {
             }
             }while(!validPackage);
 
-            bookings.add(new Booking(customerId, customerName, contact, packageId));
+            bookings.add(new Booking(customerName, contact, packageId));
             System.out.println("Do you want to continue adding? (y/n)");
             char c = input.next().charAt(0);
             input.nextLine();

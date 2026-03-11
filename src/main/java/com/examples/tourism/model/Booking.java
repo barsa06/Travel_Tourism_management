@@ -4,14 +4,15 @@ public class Booking {
     private String customerName;
     private String contact;
     private int packageId;
+    private static int count = 1;
 
-    public Booking(int customerId, String customerName, String contact, int packageId) {
+    public Booking(String customerName, String contact, int packageId) {
         this.customerName = customerName;
         this.contact = contact;
         this.packageId = packageId;
-        this.customerId = customerId;
+        this.customerId = count++ ;
     }
-    public int getCustomerId() { return customerId; }
+    //public int getCustomerId() { return customerId; }
     public String getCustomerName() { return customerName; }
     public int getPackageId() { return packageId; }
     public String getContact() { return contact; }
